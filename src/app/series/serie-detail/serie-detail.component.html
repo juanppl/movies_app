@@ -1,0 +1,27 @@
+<div class="row pt-2 ">
+    <button type="button" class="btn btn-light mr-auto ml-5" [routerLink]="['/series']" >Atras</button>
+    <h4 class="pl-3 pt-1 mr-auto ml-auto text-center">Detalle de la serie</h4>
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card d-flex justify-content-center shadow-sm mt-3 bg-white rounded">
+            <img class="card-img-top img-responsive" style="max-height: 500px; max-width: 400px;"
+                src="https://image.tmdb.org/t/p/w500/{{ serieDetail.poster_path }}">
+            <div class="card-body">
+                <h5 class="title">{{ serieDetail.name }}</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm">
+        <div class="pt-3">
+            <div>
+                <b>Temporadas</b>
+            </div>
+            <div class="btn-group" *ngFor="let season of serieDetail.seasons; let i = index;">
+                <button class="btn btn-primary mr-1 shadow-sm rounded" (click)="changedSeason(i+1)">{{ i+1 }}</button>
+            </div>
+            <app-episodes [showId]="serieDetail.id"></app-episodes>
+        </div>
+    </div>
+</div>

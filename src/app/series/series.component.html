@@ -1,0 +1,11 @@
+<div *ngIf="!results" class="row" infiniteScroll [infiniteScrollDistance]="1" (scrolled)="getPopularSeriesInfinitly()">
+    <div *ngFor="let serie of series">
+        <app-serie [serie]="serie"></app-serie>
+    </div>
+</div>
+<div class="row" *ngIf="results">
+    <p>{{ results }}</p>
+</div>
+<div class="row" *ngIf="error">
+    <p>{{ error }}</p>
+</div>

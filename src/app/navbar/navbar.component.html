@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1" routerLink="/series" style="cursor: pointer;">Series</span>
+  <form class="form-inline" (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <div class="row pr-3">
+      <div class="col-xs-10">
+        <input class="form-control mr-sm-2" type="search" name="name" placeholder="Nombre serie" aria-label="Search" ngModel
+          required #name="ngModel" pattern="^[A-Za-z0-9 ]+$">
+        <p class="help-block alert-danger" *ngIf="name.invalid && name.value && (name.dirty || name.touched)">Porfavor no escriba
+          caracteres especiales</p>
+      </div>
+    </div>
+    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" [disabled]="form.invalid">Buscar</button>
+  </form>
+</nav>
