@@ -4,3 +4,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.curved {
+    overflow: hidden;
+    border-radius: 50px;
+    perspective: 1px;
+}

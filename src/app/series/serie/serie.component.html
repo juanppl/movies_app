@@ -1,6 +1,6 @@
 <a style="cursor: pointer;" [routerLink]="['/serie-detail', serie.id]">
     <div class="col-sm py-1" (mouseover)="hover=true" (mouseout)="hover=false">
-        <div class="card d-flex justify-content-center shadow rounded-lg mt-3 bg-white rounded">
+        <div class="card d-flex justify-content-center shadow mt-3 bg-white rounded curved">
             <img *ngIf="serie.poster_path" class="card-img-top img-responsive"
                 style="max-height: 250px; max-width: 250px;"
                 src="https://image.tmdb.org/t/p/w500/{{ serie.poster_path }}">
